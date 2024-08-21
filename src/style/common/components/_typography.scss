@@ -1,0 +1,5 @@
+@use "../settings/text";
+
+h6, .h6, label {
+    font-weight: text.$font-weight-bold;
+}

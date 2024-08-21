@@ -1,0 +1,17 @@
+﻿@use "sass:meta";
+@import './bootstrap/';
+@import './fontawesome/';
+
+@include meta.load-css("common/base");
+@include meta.load-css("common/trumps");
+@include meta.load-css("common/components");
+@include meta.load-css("projects/coriander");
+
+.sc-file-icon-extension {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(0%, -50%);
+    font-size: 0.625em;
+}
+

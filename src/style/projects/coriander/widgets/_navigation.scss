@@ -1,0 +1,201 @@
+@use "sass:map";
+@use "../../../common/settings/colors";
+@use "../../../common/settings/variables";
+@use "../../../common/settings/text";
+@use "../../../common/mixins/icon";
+@use "../../../common/settings/spacings";
+@use "../../../common/settings/breakpoints";
+@use "../../../common/mixins/responsive";
+
+.#{variables.$selector-prefix}-main-navigation {
+    @media (min-width: map.get(breakpoints.$grid-breakpoints, xl)) {
+        width: initial;
+    }
+
+    .navbar {
+        @media (min-width: map.get(breakpoints.$grid-breakpoints, md)) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .navbar-toggler {
+        @media (max-width: map.get(breakpoints.$grid-breakpoints, xl)) {
+            display: block;
+        }
+    }
+
+    .navbar-collapse {
+        @media (min-width: map.get(breakpoints.$grid-breakpoints, md)) {
+            flex-basis: 100%;
+        }
+
+        .navbar-nav {
+            align-items: center;
+            margin-top: 20px;
+
+            @media (min-width: map.get(breakpoints.$grid-breakpoints, xl)) {
+                margin-top: 0;
+                align-items: initial;
+                flex-direction: row;
+            }
+        }
+    }
+
+    .nav-item {
+        margin-right: 0.2vw;
+        text-align: center;
+
+        .dropdown-menu {
+            box-shadow: 0 0 8px colors.$shade-medium;
+        }
+    }
+}
+
+.-search-icon {
+    font-size: spacings.$nav-search-icon-size;
+
+    &:before {
+        @include icon.get-icon-by-content('\f002');
+    }
+}
+
+.-user-icon {
+    width: spacings.$user-icon-radius;
+    height: spacings.$user-icon-radius;
+    background-color: colors.$main-nav !important;
+    color: colors.$primary-gray;
+
+    &:before {
+        @include icon.get-icon-by-content('\f007');
+
+        color: colors.$primary-gray !important;
+    }
+
+    &:hover {
+        background-color: colors.$main-nav-hover !important;
+    }
+}
+
+.#{variables.$selector-prefix}-logo-menu-wrapper {
+    $custom-nav-breakpoint: map.get(breakpoints.$grid-breakpoints, xxxl);
+    flex-grow: 1;
+
+    &__logo-wrapper {
+        a {
+            color: colors.$main-nav-hover;
+            text-decoration: none;
+        }
+
+        span {
+            @include responsive.min-width($custom-nav-breakpoint, text-align, end !important);
+        }
+
+        @include responsive.min-width(map.get(breakpoints.$grid-breakpoints, md), width, 12%);
+        @include responsive.min-width($custom-nav-breakpoint, width, 240px);
+        @include responsive.min-width($custom-nav-breakpoint, flex-grow, initial);
+
+        .cmp-logo {
+            &-large {
+                @include responsive.min-width($custom-nav-breakpoint, display, block !important);
+            }
+
+            &-small {
+                @include responsive.min-width($custom-nav-breakpoint, display, none);
+            }
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            img {
+                filter: brightness(80%);
+            }
+        }
+
+        @media (max-width: map.get(breakpoints.$grid-breakpoints, xl)) {
+            & {
+                position: absolute;
+                top: 11px;
+                left: 50%;
+                transform: translateX(-50%) scale(.8);
+                z-index: 10;
+                width: 100px;
+            }
+        }
+    }
+
+    &__menu-wrapper {
+        width: 100%;
+        flex: 1;
+
+        ul {
+            flex-wrap: nowrap !important;
+        }
+
+        @media (min-width: map.get(breakpoints.$grid-breakpoints, lg)) {
+            width: initial;
+        }
+    }
+}
+
+.#{variables.$selector-prefix}-find-location-search-wrapper {
+    $search-wrapper-breakpoint: 1700px;
+    order: 2;
+    width: 100%;
+
+    @media (min-width: $search-wrapper-breakpoint) {
+        background-color: transparent !important;
+        order: initial;
+        width: calc(100% / 8);
+    }
+
+    &__link {
+        cursor: pointer;
+        @include responsive.max-width(map.get(breakpoints.$grid-breakpoints, xxxl), margin-left, 1.5vw);
+        @include responsive.max-width(map.get(breakpoints.$grid-breakpoints, xl), margin-left, 0);
+
+        & > a {
+            text-decoration: none;
+            color: colors.$main-nav;
+
+            &:before {
+                @include icon.get-icon-by-content('\f3c5');
+                color: colors.$primary;
+            }
+
+            &:hover {
+                color: colors.$main-nav-hover;
+            }
+        }
+    }
+
+    .-search-icon {
+        @include responsive.max-width($search-wrapper-breakpoint, padding-left, 100px);
+        @include responsive.max-width(map.get(breakpoints.$grid-breakpoints, xxxl), margin-right, 10px);
+        @include responsive.max-width(map.get(breakpoints.$grid-breakpoints, xl), margin-right, 0);
+    }
+}
+
+.#{variables.$selector-prefix}-user {
+    position: absolute;
+    top: 3px;
+    right: 0;
+    width: auto;
+
+    @media (min-width: map.get(breakpoints.$grid-breakpoints, xl)) {
+        position: relative;
+        right: 10px;
+        top: 0;
+    }
+
+    @media (min-width: map.get(breakpoints.$grid-breakpoints, xxxl)) {
+        position: initial;
+        width: initial;
+    }
+}
+
+.-footer-navigation {
+    .nav-link {
+        padding-left: 0;
+    }
+}

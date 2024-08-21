@@ -1,0 +1,7 @@
+@mixin clamp-txt($height, $rows) {
+    height: $height;
+    display: -webkit-box;
+    -webkit-line-clamp: $rows;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+}

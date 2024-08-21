@@ -1,0 +1,55 @@
+
+@use "sass:map";
+@use "../../../common/settings/colors";
+@use "../../../common/mixins/image";
+@use "../../../common/mixins/text";
+@use "../../../common/settings/text" as textSettings;
+@use "../../../common/settings/variables";
+
+$wrapper-class-name: variables.$selector-prefix + "-food-card";
+
+.#{$wrapper-class-name} {
+    border-color: colors.$shade-medium;
+    
+    &:hover {
+        box-shadow: 0 0 25px rgb(0 0 0 / 0.1);
+
+        .#{$wrapper-class-name} {
+            &__title,
+            &__details-title {
+                a {
+                    color: colors.$button-secondary !important;
+                }
+            }
+        }
+
+    }
+
+    &__img-wrapper {
+        @include image.style-image-background(218px);
+    }
+    
+    &__title {
+        height: 100px;
+    }
+
+    &__description {
+        @include text.clamp-txt(40px, 2);
+    }
+
+    &__details-title {
+        @include text.clamp-txt(60px, 2);
+    }
+
+    &__ingredient {
+        --bs-badge-font-size: map.get(textSettings.$font-sizes, font-size-base);
+        --bs-badge-font-weight: textSettings.$font-weight-normal;
+        --bs-badge-color: colors.$primary-gray;
+        
+        background-color: colors.$primary-light;
+    }
+
+    .list-unstyled {
+        gap: 10px 10px;
+    }
+}

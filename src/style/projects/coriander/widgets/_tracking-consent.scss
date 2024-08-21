@@ -1,0 +1,14 @@
+﻿@use "sass:map";
+@use "../../../common/settings/colors";
+
+#tracking-consent {
+    padding: 20px;
+    position: relative;
+    z-index: 10000000;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 45px;
+    width: 100%;
+    border: 1px solid colors.$shade-dark;
+}

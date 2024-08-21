@@ -1,0 +1,50 @@
+﻿@use "../../../common/settings/variables";
+
+.#{variables.$selector-prefix}-subscription-form {
+    &.-wide {
+        label {
+            display: none;
+        }
+
+        button {
+            --bs-btn-border-color: white;
+            --bs-btn-active-border-color: white;
+            --bs-btn-hover-border-color: white;
+            border-width: 2px;
+            height: 46px;
+        }
+
+        [data-sf-role="fields-container"] {
+            display: flex;
+            gap: 0 6px;
+
+            & > div {
+                margin-bottom: 0 !important;
+            }
+        }
+
+        [data-sf-role="text-field-container"] {
+            flex-grow: 1;
+
+            .form-control {
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    &.-narrow {
+        [data-sf-role="text-field-container"] {
+            .form-control {
+                &::placeholder {
+                    color: transparent;
+                }
+
+                &:focus {
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+﻿@use "../../../common/mixins/icon";
+
+.star-list {
+    li {
+        list-style:none;
+        &:before {
+            @include icon.get-icon-by-content('\f005');
+            padding-right:.5em;
+        }
+    }
+}

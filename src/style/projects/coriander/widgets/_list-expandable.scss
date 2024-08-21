@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "../../../common/settings/variables";
+@use "../../../common/settings/colors";
+@use "../../../common/settings/text";
+@use "../../../common/mixins/icon";
+
+.#{variables.$selector-prefix}-list-expandable {
+    .accordion {
+        --bs-accordion-btn-focus-border-color: transparent;
+        --bs-accordion-btn-focus-box-shadow: none;
+        --bs-accordion-active-bg: transparent;
+        --bs-accordion-active-color: colors.$primary-gray;
+        --bs-accordion-btn-icon: none;
+        --bs-accordion-btn-active-icon: none;
+
+        .accordion-item {
+            border-left: 0;
+            border-right: 0;
+    
+            &:first-of-type {
+                border-top: 0;
+            }
+    
+            .accordion-button {
+                padding-left: 0;
+
+                &::after {
+                    @include icon.get-icon-by-content('\f067');
+                    font-size: map.get(text.$font-sizes, font-size-medium);
+                    font-weight: text.$font-weight-normal;
+                }
+
+                &:not(.collapsed) {
+                    box-shadow: none;
+
+                    &::after {
+                        @include icon.get-icon-by-content('\f068');
+                    }
+                }
+            }
+
+            .accordion-body {
+                padding-top: 0;
+                padding-left: 0;
+            }
+        }
+    }
+}

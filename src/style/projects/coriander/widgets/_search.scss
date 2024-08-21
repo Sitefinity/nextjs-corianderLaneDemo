@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "../../../common/settings/variables";
+@use "../../../common/settings/colors";
+@use "../../../common/mixins/responsive";
+@use "../../../common/settings/breakpoints";
+
+.#{variables.$selector-prefix}-header-search {
+    transform: none !important;
+    top: 88px !important;
+    border-radius: 0;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: colors.$shade-light;
+    @include responsive.min-width(map.get(breakpoints.$grid-breakpoints, xl), top, 98px !important);
+    @include responsive.min-width(map.get(breakpoints.$grid-breakpoints, xxxl), top, 82px !important);
+
+    &.show {
+        display: flex !important;
+    }
+
+    .#{variables.$selector-prefix}-search-input-wrapper {
+        min-width: 60%;
+    }
+
+    &__autocomplete {
+        top: 46px;
+        left: 1px;
+    }
+}

@@ -1,0 +1,15 @@
+@forward "widgets";
+@forward "elements";
+
+.sfWatermark {
+    font-family: 'Roboto';
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    border: #FFD000;
+    background-color: #FFD000;
+    min-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

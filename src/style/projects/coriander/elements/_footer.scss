@@ -1,0 +1,31 @@
+@use "../../../common/settings/variables";
+@use "../../../common/settings/colors";
+@use "../../../common/mixins/icon";
+
+$contact-margin-top: 35px;
+
+.#{variables.$selector-prefix}-footer-nav {
+    ul {
+        margin-left: 0 !important;
+    }
+
+    a {
+        color: colors.$primary-gray !important;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .-footer-nav-header > div:first-child {
+        padding-left: 16px;
+        padding-bottom: 12px;
+    }
+
+    .-logo {
+        img {
+            filter: invert(1);
+            width: 180px;
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@use "../../../common/settings/variables";
+
+.#{variables.$selector-prefix}-language-selector {
+    &.-no-bg {
+        background-color: transparent;
+    }
+}

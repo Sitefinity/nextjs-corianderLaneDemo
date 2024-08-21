@@ -1,0 +1,99 @@
+@use "../../../common/settings/colors";
+@use "../../../common/settings/variables";
+@use "../../../common/mixins/image";
+@use "../../../common/mixins/text";
+@use "../../../common/mixins/icon";
+
+$news-card-image-height: 270px;
+$news-wrapper-class-name: variables.$selector-prefix + "-news-card";
+
+.#{$news-wrapper-class-name} {
+    &:hover {
+        .#{$news-wrapper-class-name} {
+            &__img-overlay {
+                display: block;
+                opacity: 0.33;
+            }
+
+            &__title {
+                color: colors.$button-secondary !important;
+            }
+        }
+    }
+
+    &__link {
+        display: none;
+    }
+
+    &__date {
+        &:before {
+            @include icon.get-icon-by-content('\f073');
+            margin-right: 3px;
+        }
+    }
+
+    &__img-wrapper {
+        @include image.style-image-background($news-card-image-height);
+    }
+
+    &__img-overlay {
+        width: 100%;
+        height: $news-card-image-height;
+        position: relative;
+        margin-top: calc(-1 * $news-card-image-height);
+        display: none;
+        background-color: white;
+    }
+
+    &__title {
+        @include text.clamp-txt(29px, 1);
+    }
+
+    &__summary {
+        @include text.clamp-txt(148px, 6);
+    }
+
+    &-latest-news {
+        .#{variables.$selector-prefix}-news-card__link {
+            display: block;
+
+            &:hover {
+                color: colors.$button-secondary !important;
+            }
+        }
+    }
+}
+
+.#{variables.$selector-prefix}-news-card-latest-news {
+    .#{$news-wrapper-class-name} {
+        $latest-news-card-image-height: 220px;
+        &__title {
+            @include text.clamp-txt(60px, 2);
+        }
+
+        &__img-wrapper {
+            @include image.style-image-background($latest-news-card-image-height);
+        }
+
+        &__img-overlay {
+            height: $latest-news-card-image-height;
+            margin-top: calc(-1 * $latest-news-card-image-height);
+        }
+    }
+}
+
+.#{variables.$selector-prefix}-news-details {
+    position: relative;
+    top: -46px;
+
+    &__date {
+        &:before {
+            @include icon.get-icon-by-content('\f073');
+            margin-right: 3px;
+        }
+
+        &-divider {
+            color: #6073ea;
+        }
+    }
+}

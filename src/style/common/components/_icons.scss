@@ -1,0 +1,18 @@
+﻿@use "../settings/variables";
+@use "../settings/colors";
+
+.#{variables.$selector-prefix}-check-round-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid colors.$primary !important;
+    border-radius: 50% !important;
+    height: 140px;
+    width: 140px;
+
+
+    .fa {
+        font-size: 80px;
+        color: colors.$primary;
+    }
+}

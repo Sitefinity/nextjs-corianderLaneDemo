@@ -1,0 +1,58 @@
+@use "sass:map";
+@use "../../../common/settings/variables";
+@use "../../../common/settings/breakpoints";
+
+$carousel-height: 330px;
+$carousel-image-min-height: 30vh;
+
+
+.#{variables.$selector-prefix}-carousel-header-wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: auto;
+    bottom: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    min-width: 70%;
+
+    h1, p {
+        text-shadow: 0px 2px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    img {
+        max-height: $carousel-image-min-height;
+        object-fit: cover;
+    }
+}
+
+.sliderCarousel {
+    .carouselItemWrp {
+        height: $carousel-height;
+        min-height: $carousel-height;
+
+        @media (min-width: map.get(breakpoints.$grid-breakpoints, xl)) {
+            height: calc($carousel-height + 2vw);
+        }
+
+        .overlay {
+            background-color: rgba(0,0,0,.4);
+            top: 0;
+            left: 0;
+        }
+
+        img {
+            min-height: $carousel-height;
+            max-width: none;
+            object-fit: cover;
+            object-position: top;
+
+            @media (min-width: map.get(breakpoints.$grid-breakpoints, lg)) {
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+                position: initial;
+            }
+        }
+    }
+}

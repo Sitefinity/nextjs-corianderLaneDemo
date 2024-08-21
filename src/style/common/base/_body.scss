@@ -1,0 +1,15 @@
+@use "../settings/variables";
+@use "../settings/colors";
+@use "../settings/text";
+
+body {
+    color: colors.$primary-gray;
+    font-family: variables.$font-family;
+    font-weight: text.$font-weight-normal;
+    font-style: normal;
+    line-height: normal;
+}
+
+html {
+    height: 100%;
+}

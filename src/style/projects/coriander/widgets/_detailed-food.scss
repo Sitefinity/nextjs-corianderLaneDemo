@@ -1,0 +1,32 @@
+@use "../../../common/settings/variables";
+@use "../../../common/settings/colors";
+
+.#{variables.$selector-prefix}-detailed-food {
+    &__description {
+        column-gap: 24px;
+
+        &.-text,
+        &.-carousel {
+            flex: 50%
+        }
+
+        &.-carousel {
+            img {      
+                height: 40vh;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__ingredient {
+        --bs-badge-font-size: map.get(textSettings.$font-sizes, font-size-base);
+        --bs-badge-font-weight: textSettings.$font-weight-normal;
+        --bs-badge-color: colors.$primary-gray;
+        
+        background-color: colors.$primary-light;
+    }
+
+    .list-unstyled {
+        gap: 10px 10px;
+    }
+}

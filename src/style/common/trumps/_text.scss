@@ -1,0 +1,65 @@
+﻿@use "sass:map";
+@use "../settings/variables";
+@use "../settings/text";
+@use "../settings/colors";
+@use "../mixins/icon";
+
+%main-nav-default-style {
+    color: colors.$main-nav !important;
+    letter-spacing: 0.3px !important;
+    -webkit-user-select: none; /* Safari */
+    user-select: none; /* Standard syntax */
+}
+
+//font-colors
+.#{variables.$selector-prefix}-txt-dark {
+    color: colors.$primary-gray !important;
+}
+
+.#{variables.$selector-prefix}-txt-light {
+    color: colors.$primary-gray-light !important;
+}
+
+.#{variables.$selector-prefix}-txt-white {
+    color: colors.$white !important;
+}
+
+.#{variables.$selector-prefix}-txt-main-nav {
+    @extend %main-nav-default-style;
+}
+
+.#{variables.$selector-prefix}-txt-main-nav-color {
+    @extend %main-nav-default-style;
+
+    &:hover,
+    &.active {
+        color: colors.$main-nav-hover !important;
+    }
+}
+
+.#{variables.$selector-prefix}-txt-in-quotes {
+    font-size: map.get(text.$font-sizes, font-size-medium);
+    
+    &::before,
+    &::after {
+        font-size: map.get(text.$font-sizes, font-size-large);
+        color: colors.$shade-dark;
+    }
+
+    &::before {
+        @include icon.get-icon-by-content('\f10d  ');
+        margin-right: .5rem;
+    }
+    
+    &::after {
+        @include icon.get-icon-by-content('\f10e  ');
+        margin-left: .5rem;
+    }
+}
+
+//font-sizes
+@each $size, $value in text.$font-sizes {
+    .#{variables.$selector-prefix}-txt-#{$size} {
+        font-size: $value !important;
+    }
+}

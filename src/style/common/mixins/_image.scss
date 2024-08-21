@@ -1,0 +1,7 @@
+@mixin style-image-background($height) {
+    max-width: 100%;
+    height: $height;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}

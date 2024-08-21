@@ -1,0 +1,13 @@
+@use "../settings/variables";
+
+$width-properties: max-width;
+$fixed-width-list: 10;
+
+// The following code will produce a utility classes. Example: -cl-max-width-10-em 
+@each $fixed-width in $fixed-width-list {
+    @each $prop in $width-properties {
+        .-#{variables.$selector-prefix}-#{$prop}-#{$fixed-width}-em {
+            #{$prop}: calc($fixed-width * 1em) !important;
+        }
+    }
+}

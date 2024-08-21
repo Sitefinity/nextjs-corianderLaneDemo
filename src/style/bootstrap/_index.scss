@@ -1,0 +1,99 @@
+﻿// Link
+$link-color: #1473E6;
+
+// Button
+$secondary: #868E96;
+$btn-color: #FFFFFF;
+$btn-font-size: 16px;
+$btn-padding-y: 10px;
+$btn-padding-x: 20px;
+$btn-font-weight: 400;
+$btn-border-radius: 0px;
+
+// Typography
+$font-size-base: 1rem;
+$h1-font-size: 2.813rem;
+$h2-font-size: 2rem;
+$h3-font-size: 1.5rem;
+
+$font-family-base: 'Roboto', sans-serif;
+
+// Dropdown
+$dropdown-font-size: 1rem;
+$dropdown-link-hover-color: #868E96;
+
+// Form controls
+$input-border-radius: 0px;
+$input-padding-y: 10px;
+$input-padding-x: 20px;
+
+// Paginator
+$pagination-active-bg: #3E474E;
+$pagination-active-border-color: #3E474E;
+$pagination-hover-color: #3E474E;
+$pagination-color: #3E474E;
+$pagination-focus-color: #3E474E;
+$pagination-focus-bg: white;
+$pagination-focus-box-shadow: none;
+
+// Enable negative margin
+$enable-negative-margins: true;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1280px,
+    xxl: 1440px,
+    xxxl: 1525px
+);
+
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// Overrides
+.btn {
+    --bs-btn-color: #fff;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-active-border-color: transparent;
+}
+.btn-primary {
+    --bs-btn-bg: #5FCF80;
+    --bs-btn-border-color: #5FCF80;
+    --bs-btn-active-bg: #42C669;
+    --bs-btn-active-border-color: #42C669;
+    --bs-btn-hover-bg: #42C669;
+    --bs-btn-hover-border-color: #42C669;
+}
+
+.btn-secondary:hover {
+    background-color:  #727B84;
+    border-color: #727B84;
+}
+
+.dropdown-menu {
+    --bs-dropdown-border-radius: 0;
+    --bs-dropdown-padding-x: 0;
+    --bs-dropdown-padding-y: 10px;
+    --bs-dropdown-item-padding-y: 10px;
+    --bs-dropdown-item-padding-x: 20px;
+
+    .dropdown-item.active,
+    .dropdown-item:active {
+        --bs-dropdown-link-active-color: #707070;
+        --bs-dropdown-link-active-bg: #F5F8FD;
+    }
+}
+
+.border,
+.border-top,
+.border-end,
+.border-bottom,
+.border-start {
+    --bs-border-color: #f1f1f1;
+}
+
+:root {
+    --sf-background-position: 50% 50%;
+}

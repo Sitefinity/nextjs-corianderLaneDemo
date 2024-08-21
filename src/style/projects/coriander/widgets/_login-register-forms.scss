@@ -1,0 +1,33 @@
+﻿@use "../../../common/settings/variables";
+
+.#{variables.$selector-prefix}-entry-form {
+    .btn[type="submit"] {
+        width: auto !important;
+    }
+
+    &.-login {
+        [data-sf-role="form-container"] {
+            & + .row {
+                .col-md-6 {
+                    width: auto !important;
+
+                    &:first-child {
+                        padding-right: 4px;
+                    }
+
+                    &:last-child {
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.-register {
+        form {
+            & + div {
+                display: inline-block;
+            }
+        }
+    }
+}

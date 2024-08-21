@@ -1,0 +1,9 @@
+@use "../settings/variables";
+
+@mixin get-icon-by-content($content) {
+    content: $content;
+    font: variables.$font-family-fa;
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}

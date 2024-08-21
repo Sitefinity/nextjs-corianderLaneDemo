@@ -1,0 +1,15 @@
+@mixin min-width($width, $rule, $value) {
+    @media (min-width: $width) {
+        & {
+            #{$rule}: $value;
+        }
+    }
+}
+
+@mixin max-width($width, $rule, $value) {
+    @media (max-width: $width) {
+        & {
+            #{$rule}: $value;
+        }
+    }
+}

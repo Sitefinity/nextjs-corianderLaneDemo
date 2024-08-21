@@ -1,0 +1,41 @@
+﻿@use "../../../common/settings/variables";
+
+.#{variables.$selector-prefix}-financial-report {
+    .table {
+        min-width: 760px;
+    }
+
+    .col-5 {
+        flex-grow: 1;
+    }
+
+    .col-2 {
+        width: 130px;
+        align-items: center;
+        display: flex;
+    }
+
+    .col {
+        flex-grow: 0;
+        flex-basis: 180px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    th,
+    td {
+        border-color: #eeeeee !important;
+    }
+
+    td:first-child {
+        a {
+            font-weight: bold;
+            pointer-events: none;
+        }
+    }
+
+    .sc-file-icon-extension {
+        font-size: 10px;
+    }
+}
