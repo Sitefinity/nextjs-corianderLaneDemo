@@ -3,7 +3,6 @@ This is a Next JS renderer for Coriander lane demo HostedTrials site, it is a sa
 
 ## Setup
 + ### This project is based on Sitefinity NextJS samples starter template:
-    + Open the page/design templa
     + You will need to request a hosted trial demo you can do so on [this url](https://www.progress.com/sitefinity-cms/try-now/get-started/download/hosted).
     + Setup instructions for the render, see [Setup](https://github.com/sitefinity/nextjs-samples).
 
