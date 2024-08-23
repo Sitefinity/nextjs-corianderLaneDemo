@@ -1,5 +1,5 @@
 # Coriander Lane Demo with Next JS Renderer
-This is a Next JS renderer for Coriander lane demo HostedTrials site, it is a sample demonstrations how you can customize and visualize already created pages and widgets with the our .NetCore renderer. The NextJs renderer is stil not in 
+This is a sample project for Next JS renderer targeting Coriander lane demo from HostedTrials site. It is a sample demonstrations how you can customize and visualize already created pages and widgets with the our .NetCore renderer. The NextJs renderer is stil not in 
 
 ## Setup
 + ### This project is based on Sitefinity NextJS samples starter template:
