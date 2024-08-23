@@ -3,9 +3,9 @@ This is a Next JS renderer for Coriander lane demo HostedTrials site, it is a sa
 
 ## Setup
 This project is based on Sitefinity NextJS samples starter template
-For additional setup instructions, see [Setup](https://github.com/sitefinity/nextjs-samples).
 
-You will need to request a hosted trial demo and afterwards connect the renderer to that instance.
++You will need to request a hosted trial demo you can do so on [this url](https://www.progress.com/sitefinity-cms/try-now/get-started/download/hosted).
++Setup instructions for the render, see [Setup](https://github.com/sitefinity/nextjs-samples).
 
 ## Migration
 When building a Next JS renderer for an existing sitefinity site everything should work out of the box.
